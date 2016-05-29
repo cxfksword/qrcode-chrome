@@ -1,0 +1,22 @@
+body {
+    padding: 0px;
+    margin:10px;
+    width: 150px;
+    min-height: 100px;
+}
+
+textarea {
+	border: solid 1px #ccc;
+    width: 100%;
+    padding:0px;
+    margin:0px;
+}
+
+textarea:focus {
+	height: 100px;
+}
+
+
+#qrcode {
+	margin-bottom: 10px;
+}
