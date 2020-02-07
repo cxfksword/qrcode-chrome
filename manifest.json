@@ -1,8 +1,8 @@
 {
-	"name": "qrcode-chrome",
+	"name": "qrcode-lite",
 	"version": "0.1",
 	"manifest_version": 2,
-	"homepage_url" : "https://github.com/cxfksword/qrcode-chrome" ,
+	"homepage_url" : "https://github.com/cxfksword/qrcode-lite-extension" ,
 	"description": "QR code generated extension for chrome",
 	"browser_action": {
 		"default_icon": {

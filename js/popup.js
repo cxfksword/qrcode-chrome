@@ -5,7 +5,7 @@ var app= new Vue({
 	timer: null,
 	ready: function() {
 		var self = this;
-		self.qrcode = new QRCode($("#qrcode").get(0), {
+		self.qrcode = new QRCode(document.querySelector("#qrcode"), {
 			width : 150,
 			height : 150
 		});
@@ -13,13 +13,14 @@ var app= new Vue({
 		    var url = tabs[0].url;
 
 		    if (url != '') {
-		    	self.qrcode.makeCode(url);
+				self.qrcode.makeCode(url);
+				document.querySelector("#content").value = url;
 		    }
 		});
 
 		var port = chrome.extension.connect({name: "Sample Communication"});
 		port.onMessage.addListener(function(msg) {
-			$("#content").val(msg);
+			document.querySelector("#content").value = msg;
 		    self.qrcode.makeCode(msg);
 		});
 	},
@@ -29,11 +30,12 @@ var app= new Vue({
 	   			return false;
 	   		}
 
-	   		if ($.trim($("#content").val()) == '') {
+			var content = document.querySelector("#content").value.trim();
+	   		if (content === '') {
 	   			return false;
 	   		}
 
-	   		this.qrcode.makeCode($("#content").val());
+	   		this.qrcode.makeCode(content);
 	   		this.dirty = false;
 	   },
 	   textareaKeyup: function() {
