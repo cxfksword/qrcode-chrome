@@ -17,12 +17,6 @@ var app= new Vue({
 				document.querySelector("#content").value = url;
 		    }
 		});
-
-		var port = chrome.extension.connect({name: "Sample Communication"});
-		port.onMessage.addListener(function(msg) {
-			document.querySelector("#content").value = msg;
-		    self.qrcode.makeCode(msg);
-		});
 	},
 	methods: {
 	   generateQRcode: function() {
@@ -49,7 +43,7 @@ var app= new Vue({
 
 	   		self.timer = setTimeout(function() {
 	   			self.generateQRcode();
-	   		}, 500);
+	   		}, 200);
 	   }
 	}
 });

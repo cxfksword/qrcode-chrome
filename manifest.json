@@ -1,6 +1,6 @@
 {
 	"name": "qrcode-chrome",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"manifest_version": 2,
 	"homepage_url" : "https://github.com/cxfksword/qrcode-chrome" ,
 	"description": "QR code generated extension for chrome",
@@ -12,10 +12,7 @@
 		"default_popup": "popup.html"
 	},
 	"permissions": [
-		"tabs",
-		"debugger",
-		"http://*/",
-		"https://*/"
+		"tabs"
 	],
 	"icons": {
       "128": "img/icon128.png",
